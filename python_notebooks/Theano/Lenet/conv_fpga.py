@@ -1,5 +1,5 @@
 import im2col_lasagne_cython
-import acc8
+import acc8_func
 import numpy as np
 from collections import namedtuple
 from pynq import PL
@@ -62,7 +62,7 @@ metadata=FunctionMetadata()
     
 class StreamingSwitch:
   def __init__(self,name):
-    base_addr=int(PL.ip_dict["SEG_{0}_Reg".format(name)][0],16)
+    base_addr=PL.ip_dict[name]["phys_addr"]
     self.mmio=MMIO(base_addr,256)
     self.reset()
 
@@ -79,29 +79,31 @@ class StreamingSwitch:
     # Causes the switch to update automatically to the new routing
     self.mmio.write(0,2)
 
+from pynq import Xlnk
+xlnk = Xlnk()
 class DMAWrapper:
-  def __init__(self,index):
-    #print('Send DMA: create index {0} name {1}'.format(index,metadata.DMA_names[index]))
-    base_addr=int(PL.ip_dict["SEG_{0}_Reg".format(metadata.DMA_names[index])][0],16)
-    #print('Send DMA: base_address {0:x}'.format(base_addr))
-    self.dma=DMA(base_addr,0)
+  def __init__(self,index,overlay):
+    if index == 0:
+        self.dma=overlay.axi_dma_0
+    elif index == 1:
+        self.dma=overlay.axi_dma_1
+        
     self.ports=metadata.DMA[index]
 
   def set_data(self,data,dtype):
     self.length=len(data) * dtype.itemsize
-    #print('Send DMA: sending {0} bytes'.format(self.length))
-    self.dma.create_buf(self.length)
-    ffi=pynq.drivers.dma.ffi
-    buf=ffi.buffer(self.dma.buf,self.length)
-    view=np.frombuffer(buf,dtype,-1)
+    self.buf = xlnk.cma_array(shape=(self.length,), dtype=np.uint8)
+    view=np.frombuffer(self.buf,dtype = dtype,count = -1)
     np.copyto(view,data,casting='same_kind')
 
   def transfer(self):
     #print('Send DMA: transfer started')
-    self.dma.transfer(self.length,0)
+    self.dma.sendchannel.start()
+    self.dma.sendchannel.transfer(self.buf)
 
   def wait(self):
-    self.dma.wait()
+    self.dma.sendchannel.wait()
+    self.buf.freebuffer()
     #print('Send DMA: transfer finished')
 
 def wrap_arg(a,dtype=np.int32):
@@ -132,13 +134,14 @@ def hardware_function(vlnv):
 
 from pynq import Overlay
 Overlay('base.bit').download()
-from pynq.drivers import DMA
-import pynq.drivers.dma
-Overlay('/home/xilinx/jupyter_notebooks/PYNQ_CNN/Theano/Lenet/Bitstream/lenet.bit').download()
+from pynq.lib import DMA
+import pynq.lib.dma
+overlay = Overlay('/home/xilinx/jupyter_notebooks/PYNQ-Classification/python_notebooks/Theano/Lenet/Bitstream/lenet.bit')
+overlay.download()
 
 def prepare_execution(plan,dma,return_port):
   if type(plan) is Wrapper:
-    d=DMAWrapper(len(dma))
+    d=DMAWrapper(len(dma),overlay)
     d.set_data(plan.wrapped,plan.dtype())
     dma.append(d)
     hw_switch.set_route(d.ports[1][0],return_port)
@@ -148,7 +151,7 @@ def prepare_execution(plan,dma,return_port):
     name=metadata.functions[plan.func].name
     mmio=None
     if name:
-      mmio=MMIO(int(PL,ip_dict['SEG_{0}_Reg'.format(name)][0],16),256)
+      mmio=MMIO(PL,ip_dict[name]["phys_addr"],256)
     for i,a in enumerate(plan.args):
       prepare_execution(a,dma,in_ports[i])
     for i,a in enumerate(plan.scalar_args):
@@ -161,27 +164,31 @@ hw_switch=StreamingSwitch('axis_switch_0')
 def execute_hardware(plan):
   dma=[]
   hw_switch.reset()
-  ret_dma_base=int(PL.ip_dict["SEG_{0}_Reg".format(metadata.DMA_names[0])][0],16)
+  ret_dma_base=PL.ip_dict[metadata.DMA_names[0]]["phys_addr"]
   ret_dma_mmio=MMIO(ret_dma_base,256)
-  ret_dma=DMA(ret_dma_base,1)
-  ret_dma.create_buf(8388607)
+  ret_dma=overlay.axi_dma_0
+  ret_buf = xlnk.cma_array((8388607,), dtype=np.uint8)
   prepare_execution(plan,dma,metadata.DMA[0][0][0])
   hw_switch.commit()
   ## Timer Start
   start_time = time.process_time()
-  ret_dma.transfer(8388607,1)
+  ret_dma.recvchannel.start()
+  ret_dma.recvchannel.transfer(ret_buf)
   for d in dma:
     d.transfer()
   for d in dma:
     d.wait()
+    
   ## Timer End
+  
   end_time = time.process_time()
   print("Elapsed Test Time: ", end_time-start_time)
-  ret_dma.wait()
+  ret_dma.recvchannel.wait()
   bytes_read=ret_dma_mmio.read(0x58)
-  ffi=pynq.drivers.dma.ffi
-  buf=ffi.buffer(ret_dma.buf,bytes_read)
-  view=np.frombuffer(buf,plan.dtype,-1).copy()
+  view=np.frombuffer(ret_buf,np.uint8,count = bytes_read).copy()
+  view.dtype = plan.dtype
+  print(view.shape)
+  ret_buf.freebuffer();
   return view
 
 @hardware_function('Xilinx:hls:simple_sum:1.0')

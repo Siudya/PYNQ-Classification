@@ -1,5 +1,5 @@
 ## PROJECT NAME: 
-PYNQ Classification - Python on Zynq FPGA for Convolutional Neural Networks 
+PYNQ Classification - Python on Zynq FPGA for Convolutional Neural Networks (Alpha Release)
 
 ## BRIEF DESCRIPTION:
 This repository presents a fast prototyping framework, which is an Open Source framework designed to enable fast deployment of embedded Convolutional Neural Network (CNN) applications on PYNQ platforms.
@@ -20,7 +20,11 @@ If you make use of this code, please acknowledge us by citing [our article](http
 
 The project demo accepts pre-trained CNN models in either Caffe or Theano syntax, hence the step 1 and 2 introduces how to install Caffe and Theano (with Lasagne) on PYNQ. Step 3 explains how to download and run the demos for LeNet and CIFAR-10 (Caffe "quick" version) models.
 
-### Vivado Project Setup - How to implement more CNN models?
+For a quick overview on the project please watch [my video tutorial](https://youtu.be/DoA8hKBltV4).
+
+
+
+###  Vivado Project Setup - How to implement more CNN models?
 
 Please go to hw/README.md for guide on regenerating the Vivado and Vivado HLS projects.
 

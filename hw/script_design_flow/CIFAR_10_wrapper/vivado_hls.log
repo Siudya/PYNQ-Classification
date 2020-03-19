@@ -1,0 +1,1000 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source D:/Programs/Xilinx/Vivado/2018.3/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running 'D:/Programs/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'Siudya' on host 'desktop-2tsrg1k' (Windows NT_amd64 version 6.2) on Fri Feb 28 14:56:40 +0800 2020
+INFO: [HLS 200-10] In directory 'C:/Users/Siudya/Downloads/PYNQ-Classfication/hw/script_design_flow/CIFAR_10_wrapper'
+INFO: [HLS 200-10] Creating and opening project 'C:/Users/Siudya/Downloads/PYNQ-Classfication/hw/script_design_flow/CIFAR_10_wrapper/CIFAR_10'.
+INFO: [HLS 200-10] Adding design file 'CIFAR_10_wrapper.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'CIFAR_10_wrapper.h' to the project
+INFO: [HLS 200-10] Adding design file '../hw_library/axi_dma_master.h' to the project
+INFO: [HLS 200-10] Adding design file '../hw_library/axi_dma_slave.h' to the project
+INFO: [HLS 200-10] Adding design file 'config.h' to the project
+INFO: [HLS 200-10] Adding design file '../hw_library/fixed_point_stream_convolution.h' to the project
+INFO: [HLS 200-10] Adding design file '../hw_library/fully_connected.h' to the project
+INFO: [HLS 200-10] Adding design file '../hw_library/pool.h' to the project
+INFO: [HLS 200-10] Adding design file '../hw_library/stream_convolution_slideWindow.h' to the project
+INFO: [HLS 200-10] Creating and opening solution 'C:/Users/Siudya/Downloads/PYNQ-Classfication/hw/script_design_flow/CIFAR_10_wrapper/CIFAR_10/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'CIFAR_10_wrapper.cpp' ... 
+WARNING: [HLS 214-111] Static variables and non-static stream cannot be used inside a dataflow region: CIFAR_10_wrapper.cpp:13:23
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file CIFAR_10_wrapper.cpp
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:26 . Memory (MB): peak = 103.512 ; gain = 18.992
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:26 . Memory (MB): peak = 103.512 ; gain = 18.992
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:28 . Memory (MB): peak = 115.199 ; gain = 30.680
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:04 ; elapsed = 00:00:30 . Memory (MB): peak = 118.328 ; gain = 33.809
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'L3' (./../hw_library/fixed_point_stream_convolution.h:124) in function 'SMM<1u, 800u, 64u>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'L3' (./../hw_library/fixed_point_stream_convolution.h:124) in function 'SMM<1u, 800u, 32u>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'L3' (./../hw_library/fixed_point_stream_convolution.h:124) in function 'SMM<1u, 75u, 32u>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (./../hw_library/stream_convolution_slideWindow.h:123) in function 'SCIG<5u, 3u, 32u, 32u, 32u, 2u>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (./../hw_library/stream_convolution_slideWindow.h:123) in function 'SCIG<5u, 32u, 8u, 64u, 8u, 2u>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (./../hw_library/stream_convolution_slideWindow.h:123) in function 'SCIG<5u, 32u, 16u, 32u, 16u, 2u>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'L3' (./../hw_library/fully_connected.h:124) in function 'FC<1u, 64u, 10u>' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'L3' (./../hw_library/fully_connected.h:124) in function 'FC<1u, 1024u, 64u>' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (./../hw_library/pool.h:124) in function 'pool<2u, 64u, 8u>' completely with a factor of 4.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (./../hw_library/pool.h:130) in function 'pool<2u, 64u, 8u>' completely with a factor of 64.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (./../hw_library/pool.h:124) in function 'pool<2u, 32u, 32u>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (./../hw_library/pool.h:130) in function 'pool<2u, 32u, 32u>' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (./../hw_library/pool.h:124) in function 'pool<2u, 32u, 16u>' completely with a factor of 8.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2' (./../hw_library/pool.h:130) in function 'pool<2u, 32u, 16u>' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'L4' (./../hw_library/fixed_point_stream_convolution.h:126) in function 'SMM<1u, 800u, 64u>' completely with a factor of 25.
+INFO: [HLS 200-489] Unrolling loop 'L4' (./../hw_library/fixed_point_stream_convolution.h:126) in function 'SMM<1u, 800u, 32u>' completely with a factor of 25.
+INFO: [HLS 200-489] Unrolling loop 'L4' (./../hw_library/fixed_point_stream_convolution.h:126) in function 'SMM<1u, 75u, 32u>' completely with a factor of 25.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (./../hw_library/stream_convolution_slideWindow.h:130) in function 'SCIG<5u, 3u, 32u, 32u, 32u, 2u>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.2' (./../hw_library/stream_convolution_slideWindow.h:135) in function 'SCIG<5u, 3u, 32u, 32u, 32u, 2u>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.3' (./../hw_library/stream_convolution_slideWindow.h:140) in function 'SCIG<5u, 3u, 32u, 32u, 32u, 2u>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.4' (./../hw_library/stream_convolution_slideWindow.h:158) in function 'SCIG<5u, 3u, 32u, 32u, 32u, 2u>' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (./../hw_library/stream_convolution_slideWindow.h:130) in function 'SCIG<5u, 32u, 8u, 64u, 8u, 2u>' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.2' (./../hw_library/stream_convolution_slideWindow.h:135) in function 'SCIG<5u, 32u, 8u, 64u, 8u, 2u>' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.3' (./../hw_library/stream_convolution_slideWindow.h:140) in function 'SCIG<5u, 32u, 8u, 64u, 8u, 2u>' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.4' (./../hw_library/stream_convolution_slideWindow.h:158) in function 'SCIG<5u, 32u, 8u, 64u, 8u, 2u>' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (./../hw_library/stream_convolution_slideWindow.h:130) in function 'SCIG<5u, 32u, 16u, 32u, 16u, 2u>' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.2' (./../hw_library/stream_convolution_slideWindow.h:135) in function 'SCIG<5u, 32u, 16u, 32u, 16u, 2u>' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.3' (./../hw_library/stream_convolution_slideWindow.h:140) in function 'SCIG<5u, 32u, 16u, 32u, 16u, 2u>' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.4' (./../hw_library/stream_convolution_slideWindow.h:158) in function 'SCIG<5u, 32u, 16u, 32u, 16u, 2u>' completely with a factor of 32.
+INFO: [HLS 200-489] Unrolling loop 'L4' (./../hw_library/fully_connected.h:126) in function 'FC<1u, 64u, 10u>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'L4' (./../hw_library/fully_connected.h:126) in function 'FC<1u, 1024u, 64u>' completely with a factor of 32.
+INFO: [XFORM 203-101] Partitioning array 'A.V.4'  in dimension 2 with a block factor 25.
+INFO: [XFORM 203-101] Partitioning array 'B.V.4'  in dimension 2 with a block factor 25.
+INFO: [XFORM 203-101] Partitioning array 'A.V.3'  in dimension 2 with a block factor 25.
+INFO: [XFORM 203-101] Partitioning array 'B.V.3'  in dimension 2 with a block factor 25.
+INFO: [XFORM 203-101] Partitioning array 'A.V.2'  in dimension 2 with a block factor 25.
+INFO: [XFORM 203-101] Partitioning array 'B.V.2'  in dimension 2 with a block factor 25.
+INFO: [XFORM 203-101] Partitioning array 'A.V.1'  in dimension 2 with a block factor 16.
+INFO: [XFORM 203-101] Partitioning array 'B.V.1'  in dimension 2 with a block factor 16.
+INFO: [XFORM 203-101] Partitioning array 'A.V'  in dimension 2 with a block factor 32.
+INFO: [XFORM 203-101] Partitioning array 'B.V'  in dimension 2 with a block factor 32.
+INFO: [XFORM 203-712] Applying dataflow to function 'cifar_10', detected/extracted 13 process function(s): 
+	 'AXI_DMA_SLAVE'
+	 'SCIG<5u, 3u, 32u, 32u, 32u, 2u>'
+	 'SMM<1u, 75u, 32u>'
+	 'pool<2u, 32u, 32u>'
+	 'SCIG<5u, 32u, 16u, 32u, 16u, 2u>'
+	 'SMM<1u, 800u, 32u>'
+	 'pool<2u, 32u, 16u>'
+	 'SCIG<5u, 32u, 8u, 64u, 8u, 2u>'
+	 'SMM<1u, 800u, 64u>'
+	 'pool<2u, 64u, 8u>'
+	 'FC<1u, 1024u, 64u>'
+	 'FC<1u, 64u, 10u>'
+	 'AXI_DMA_MASTER'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (./../hw_library/stream_convolution_slideWindow.h:141:6) to (./../hw_library/stream_convolution_slideWindow.h:152:4) in function 'SCIG<5u, 3u, 32u, 32u, 32u, 2u>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (./../hw_library/stream_convolution_slideWindow.h:141:6) to (./../hw_library/stream_convolution_slideWindow.h:152:4) in function 'SCIG<5u, 32u, 8u, 64u, 8u, 2u>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (./../hw_library/stream_convolution_slideWindow.h:141:6) to (./../hw_library/stream_convolution_slideWindow.h:152:4) in function 'SCIG<5u, 32u, 16u, 32u, 16u, 2u>'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'SMM<1u, 800u, 64u>' (./../hw_library/fixed_point_stream_convolution.h:17:32)...25 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'SMM<1u, 800u, 32u>' (./../hw_library/fixed_point_stream_convolution.h:17:32)...25 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'SMM<1u, 75u, 32u>' (./../hw_library/fixed_point_stream_convolution.h:17:32)...25 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'SCIG<5u, 3u, 32u, 32u, 32u, 2u>' (./../hw_library/stream_convolution_slideWindow.h:68:7)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'SCIG<5u, 32u, 16u, 32u, 16u, 2u>' (./../hw_library/stream_convolution_slideWindow.h:68:7)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'FC<1u, 64u, 10u>' (./../hw_library/fully_connected.h:17:32)...16 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'FC<1u, 1024u, 64u>' (./../hw_library/fully_connected.h:17:32)...32 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:20 ; elapsed = 00:00:46 . Memory (MB): peak = 162.469 ; gain = 77.949
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2.1.1.1.1' (./../hw_library/pool.h:144:31) in function 'pool<2u, 64u, 8u>'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-2.1.1.1' (./../hw_library/pool.h:142:30) in function 'pool<2u, 64u, 8u>' : 
+
+more than one sub loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2.1.1' (./../hw_library/pool.h:141:29) in function 'pool<2u, 64u, 8u>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2.1.2' (./../hw_library/pool.h:167:33) in function 'pool<2u, 64u, 8u>'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-2.1' (./../hw_library/pool.h:140:28) in function 'pool<2u, 64u, 8u>' : 
+
+more than one sub loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2' (./../hw_library/pool.h:139:32) in function 'pool<2u, 64u, 8u>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2.1.1.1.1' (./../hw_library/pool.h:144:31) in function 'pool<2u, 32u, 32u>'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-2.1.1.1' (./../hw_library/pool.h:142:30) in function 'pool<2u, 32u, 32u>' : 
+
+more than one sub loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2.1.1' (./../hw_library/pool.h:141:29) in function 'pool<2u, 32u, 32u>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2.1.2' (./../hw_library/pool.h:167:33) in function 'pool<2u, 32u, 32u>'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-2.1' (./../hw_library/pool.h:140:28) in function 'pool<2u, 32u, 32u>' : 
+
+more than one sub loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2' (./../hw_library/pool.h:139:32) in function 'pool<2u, 32u, 32u>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2.1.1.1.1' (./../hw_library/pool.h:144:31) in function 'pool<2u, 32u, 16u>'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-2.1.1.1' (./../hw_library/pool.h:142:30) in function 'pool<2u, 32u, 16u>' : 
+
+more than one sub loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2.1.1' (./../hw_library/pool.h:141:29) in function 'pool<2u, 32u, 16u>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2.1.2' (./../hw_library/pool.h:167:33) in function 'pool<2u, 32u, 16u>'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-2.1' (./../hw_library/pool.h:140:28) in function 'pool<2u, 32u, 16u>' : 
+
+more than one sub loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2' (./../hw_library/pool.h:139:32) in function 'pool<2u, 32u, 16u>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (./../hw_library/fixed_point_stream_convolution.h:78:15) in function 'SMM<1u, 800u, 64u>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'L2' (./../hw_library/fixed_point_stream_convolution.h:122:7) in function 'SMM<1u, 800u, 64u>'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'L1' (./../hw_library/fixed_point_stream_convolution.h:120:6) in function 'SMM<1u, 800u, 64u>' : 
+
+more than one sub loop.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-2' (./../hw_library/fixed_point_stream_convolution.h:96:22) in function 'SMM<1u, 800u, 64u>' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (./../hw_library/fixed_point_stream_convolution.h:78:15) in function 'SMM<1u, 800u, 32u>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'L2' (./../hw_library/fixed_point_stream_convolution.h:122:7) in function 'SMM<1u, 800u, 32u>'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'L1' (./../hw_library/fixed_point_stream_convolution.h:120:6) in function 'SMM<1u, 800u, 32u>' : 
+
+more than one sub loop.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-2' (./../hw_library/fixed_point_stream_convolution.h:96:22) in function 'SMM<1u, 800u, 32u>' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (./../hw_library/fixed_point_stream_convolution.h:78:15) in function 'SMM<1u, 75u, 32u>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'L2' (./../hw_library/fixed_point_stream_convolution.h:122:7) in function 'SMM<1u, 75u, 32u>'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'L1' (./../hw_library/fixed_point_stream_convolution.h:120:6) in function 'SMM<1u, 75u, 32u>' : 
+
+more than one sub loop.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-2' (./../hw_library/fixed_point_stream_convolution.h:96:22) in function 'SMM<1u, 75u, 32u>' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (./../hw_library/fully_connected.h:78:15) in function 'FC<1u, 64u, 10u>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'L2' (./../hw_library/fully_connected.h:122:7) in function 'FC<1u, 64u, 10u>'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'L1' (./../hw_library/fully_connected.h:120:6) in function 'FC<1u, 64u, 10u>' : 
+
+more than one sub loop.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-2' (./../hw_library/fully_connected.h:96:22) in function 'FC<1u, 64u, 10u>' : 
+
+the outer loop is not a perfect loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (./../hw_library/fully_connected.h:78:15) in function 'FC<1u, 1024u, 64u>'.
+INFO: [XFORM 203-541] Flattening a loop nest 'L2' (./../hw_library/fully_connected.h:122:7) in function 'FC<1u, 1024u, 64u>'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'L1' (./../hw_library/fully_connected.h:120:6) in function 'FC<1u, 1024u, 64u>' : 
+
+more than one sub loop.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'Loop-2' (./../hw_library/fully_connected.h:96:22) in function 'FC<1u, 1024u, 64u>' : 
+
+the outer loop is not a perfect loop.
+WARNING: [XFORM 203-631] Renaming function 'SCIG<5u, 3u, 32u, 32u, 32u, 2u>' to 'SCIG' (./../hw_library/stream_convolution_slideWindow.h:68:7)
+WARNING: [XFORM 203-631] Renaming function 'SCIG<5u, 32u, 8u, 64u, 8u, 2u>' to 'SCIG.1' (./../hw_library/stream_convolution_slideWindow.h:68:7)
+WARNING: [XFORM 203-631] Renaming function 'SCIG<5u, 32u, 16u, 32u, 16u, 2u>' to 'SCIG.2' (./../hw_library/stream_convolution_slideWindow.h:68:7)
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'inputBuf.V' (./../hw_library/stream_convolution_slideWindow.h:107).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'inputBuf.V' (./../hw_library/stream_convolution_slideWindow.h:107).
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'inputBuf.V' (./../hw_library/stream_convolution_slideWindow.h:107).
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:34 ; elapsed = 00:01:01 . Memory (MB): peak = 347.664 ; gain = 263.145
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'cifar_10' ...
+WARNING: [SYN 201-103] Legalizing function name 'SMM<1u, 75u, 32u>' to 'SMM_1u_75u_32u_s'.
+WARNING: [SYN 201-103] Legalizing function name 'pool<2u, 32u, 32u>' to 'pool_2u_32u_32u_s'.
+WARNING: [SYN 201-103] Legalizing function name 'SCIG.2' to 'SCIG_2'.
+WARNING: [SYN 201-103] Legalizing function name 'SMM<1u, 800u, 32u>' to 'SMM_1u_800u_32u_s'.
+WARNING: [SYN 201-103] Legalizing function name 'pool<2u, 32u, 16u>' to 'pool_2u_32u_16u_s'.
+WARNING: [SYN 201-103] Legalizing function name 'SCIG.1' to 'SCIG_1'.
+WARNING: [SYN 201-103] Legalizing function name 'SMM<1u, 800u, 64u>' to 'SMM_1u_800u_64u_s'.
+WARNING: [SYN 201-103] Legalizing function name 'pool<2u, 64u, 8u>' to 'pool_2u_64u_8u_s'.
+WARNING: [SYN 201-103] Legalizing function name 'FC<1u, 1024u, 64u>' to 'FC_1u_1024u_64u_s'.
+WARNING: [SYN 201-103] Legalizing function name 'FC<1u, 64u, 10u>' to 'FC_1u_64u_10u_s'.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (./../hw_library/stream_convolution_slideWindow.h:105) on 'alloca' operation ('IFMPadDimSqrt', ./../hw_library/stream_convolution_slideWindow.h:104) due to incompatible operation sets.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (./../hw_library/stream_convolution_slideWindow.h:105) on 'alloca' operation ('IFMPadDimSqrt', ./../hw_library/stream_convolution_slideWindow.h:104) due to incompatible operation sets.
+WARNING: [SYN 201-303] Cannot apply functional unit assignment of 'Mul_LUT' (./../hw_library/stream_convolution_slideWindow.h:105) on 'alloca' operation ('IFMPadDimSqrt', ./../hw_library/stream_convolution_slideWindow.h:104) due to incompatible operation sets.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'AXI_DMA_SLAVE' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (12.6ns) of 'mul' operation ('KER_size_0', ./../hw_library/axi_dma_slave.h:56) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+WARNING: [SCHED 204-21] Estimated clock period (12.592ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'AXI_DMA_SLAVE' consists of the following:
+	'mul' operation ('KER_size_0', ./../hw_library/axi_dma_slave.h:56) [34]  (12.6 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 61.641 seconds; current allocated memory: 295.023 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.265 seconds; current allocated memory: 295.272 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'SCIG' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (12.6ns) of 'mul' operation ('KER_size_0', ./../hw_library/stream_convolution_slideWindow.h:183) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG': Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'load' operation ('inElem_V_load', ./../hw_library/stream_convolution_slideWindow.h:141) on array 'inElem.V', ./../hw_library/stream_convolution_slideWindow.h:127 and 'store' operation (./../hw_library/stream_convolution_slideWindow.h:137) of variable 'tmp_239', ./../hw_library/stream_convolution_slideWindow.h:137 on array 'inElem.V', ./../hw_library/stream_convolution_slideWindow.h:127.
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG': Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136) and fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 3, Depth = 9.
+WARNING: [SCHED 204-21] Estimated clock period (12.592ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'SCIG' consists of the following:
+	'mul' operation ('KER_size_0', ./../hw_library/stream_convolution_slideWindow.h:183) [28]  (12.6 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.225 seconds; current allocated memory: 295.875 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+WARNING: [BIND 205-102] The specified resource core for memory 'inElem_V' will be ignored if a simpler one can be used.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.425 seconds; current allocated memory: 296.534 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'SMM_1u_75u_32u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (12.6ns) of 'mul' operation ('KER_size_0', ./../hw_library/fixed_point_stream_convolution.h:143) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'L1.1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'L2_L3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 8.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 12.
+WARNING: [SCHED 204-21] Estimated clock period (12.592ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'SMM_1u_75u_32u_s' consists of the following:
+	'mul' operation ('KER_size_0', ./../hw_library/fixed_point_stream_convolution.h:143) [86]  (12.6 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 2.391 seconds; current allocated memory: 306.757 MB.
+INFO: [HLS 200-434] Only 4 loops out of a total 6 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.548 seconds; current allocated memory: 310.394 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pool_2u_32u_32u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (12.6ns) of 'mul' operation ('KER_size_0', ./../hw_library/pool.h:188) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2.1.1'.
+WARNING: [SCHED 204-68] The II Violation in module 'pool_2u_32u_32u_s': Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation (./../hw_library/pool.h:148) of variable 'acc_load_2_valIn_V', ./../hw_library/pool.h:148 on array 'acc', ./../hw_library/pool.h:121 and 'load' operation ('acc_load_2', ./../hw_library/pool.h:148) on array 'acc', ./../hw_library/pool.h:121.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2.1.2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2.2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+WARNING: [SCHED 204-21] Estimated clock period (12.592ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'pool_2u_32u_32u_s' consists of the following:
+	'mul' operation ('KER_size_0', ./../hw_library/pool.h:188) [178]  (12.6 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 2.468 seconds; current allocated memory: 311.272 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+WARNING: [BIND 205-102] The specified resource core for memory 'buf' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'acc' will be ignored if a simpler one can be used.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.779 seconds; current allocated memory: 312.215 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'SCIG_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (12.6ns) of 'mul' operation ('KER_size_0', ./../hw_library/stream_convolution_slideWindow.h:183) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG_2': Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'load' operation ('inElem_V_load', ./../hw_library/stream_convolution_slideWindow.h:141) on array 'inElem.V', ./../hw_library/stream_convolution_slideWindow.h:127 and 'store' operation (./../hw_library/stream_convolution_slideWindow.h:137) of variable 'tmp_152', ./../hw_library/stream_convolution_slideWindow.h:137 on array 'inElem.V', ./../hw_library/stream_convolution_slideWindow.h:127.
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG_2': Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136) and fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136).
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG_2': Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136) and fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136).
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG_2': Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136) and fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136).
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG_2': Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 1)
+   between fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136) and fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136).
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG_2': Unable to enforce a carried dependence constraint (II = 27, distance = 1, offset = 1)
+   between fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136) and fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136).
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG_2': Unable to enforce a carried dependence constraint (II = 31, distance = 1, offset = 1)
+   between fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136) and fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 32, Depth = 37.
+WARNING: [SCHED 204-21] Estimated clock period (12.592ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'SCIG_2' consists of the following:
+	'mul' operation ('KER_size_0', ./../hw_library/stream_convolution_slideWindow.h:183) [28]  (12.6 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.773 seconds; current allocated memory: 314.386 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+WARNING: [BIND 205-102] The specified resource core for memory 'inElem_V' will be ignored if a simpler one can be used.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.391 seconds; current allocated memory: 316.180 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'SMM_1u_800u_32u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (12.6ns) of 'mul' operation ('KER_size_0', ./../hw_library/fixed_point_stream_convolution.h:143) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'L1.1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'L2_L3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 7.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+WARNING: [SCHED 204-21] Estimated clock period (12.592ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'SMM_1u_800u_32u_s' consists of the following:
+	'mul' operation ('KER_size_0', ./../hw_library/fixed_point_stream_convolution.h:143) [86]  (12.6 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.227 seconds; current allocated memory: 318.713 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.513 seconds; current allocated memory: 333.473 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pool_2u_32u_16u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (12.6ns) of 'mul' operation ('KER_size_0', ./../hw_library/pool.h:188) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2.1.1'.
+WARNING: [SCHED 204-68] The II Violation in module 'pool_2u_32u_16u_s': Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation (./../hw_library/pool.h:149) of variable 'tmp_40', ./../hw_library/pool.h:149 on array 'acc', ./../hw_library/pool.h:121 and 'load' operation ('i_op', ./../hw_library/pool.h:149) on array 'acc', ./../hw_library/pool.h:121.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2.1.2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2.2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+WARNING: [SCHED 204-21] Estimated clock period (12.592ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'pool_2u_32u_16u_s' consists of the following:
+	'mul' operation ('KER_size_0', ./../hw_library/pool.h:188) [146]  (12.6 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 2.429 seconds; current allocated memory: 334.222 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+WARNING: [BIND 205-102] The specified resource core for memory 'buf' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'acc' will be ignored if a simpler one can be used.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.727 seconds; current allocated memory: 335.021 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'SCIG_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (12.6ns) of 'mul' operation ('KER_size_0', ./../hw_library/stream_convolution_slideWindow.h:183) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG_1': Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'load' operation ('inElem_V_load', ./../hw_library/stream_convolution_slideWindow.h:141) on array 'inElem.V', ./../hw_library/stream_convolution_slideWindow.h:127 and 'store' operation (./../hw_library/stream_convolution_slideWindow.h:137) of variable 'tmp_196', ./../hw_library/stream_convolution_slideWindow.h:137 on array 'inElem.V', ./../hw_library/stream_convolution_slideWindow.h:127.
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG_1': Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1)
+   between fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136) and fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136).
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG_1': Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1)
+   between fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136) and fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136).
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG_1': Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1)
+   between fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136) and fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136).
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG_1': Unable to enforce a carried dependence constraint (II = 19, distance = 1, offset = 1)
+   between fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136) and fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136).
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG_1': Unable to enforce a carried dependence constraint (II = 27, distance = 1, offset = 1)
+   between fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136) and fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136).
+WARNING: [SCHED 204-68] The II Violation in module 'SCIG_1': Unable to enforce a carried dependence constraint (II = 31, distance = 1, offset = 1)
+   between fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136) and fifo read on port 'in_V_V' (./../hw_library/stream_convolution_slideWindow.h:136).
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 32, Depth = 37.
+WARNING: [SCHED 204-21] Estimated clock period (12.592ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'SCIG_1' consists of the following:
+	'mul' operation ('KER_size_0', ./../hw_library/stream_convolution_slideWindow.h:183) [28]  (12.6 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 6.037 seconds; current allocated memory: 337.208 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+WARNING: [BIND 205-102] The specified resource core for memory 'inElem_V' will be ignored if a simpler one can be used.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.429 seconds; current allocated memory: 338.965 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'SMM_1u_800u_64u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (12.6ns) of 'mul' operation ('KER_size_0', ./../hw_library/fixed_point_stream_convolution.h:143) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'L1.1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'L2_L3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 7.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+WARNING: [SCHED 204-21] Estimated clock period (12.592ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'SMM_1u_800u_64u_s' consists of the following:
+	'mul' operation ('KER_size_0', ./../hw_library/fixed_point_stream_convolution.h:143) [86]  (12.6 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.245 seconds; current allocated memory: 341.483 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.416 seconds; current allocated memory: 356.244 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pool_2u_64u_8u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (12.6ns) of 'mul' operation ('KER_size_0', ./../hw_library/pool.h:188) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2.1.1'.
+WARNING: [SCHED 204-68] The II Violation in module 'pool_2u_64u_8u_s': Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation (./../hw_library/pool.h:149) of variable 'tmp_16', ./../hw_library/pool.h:149 on array 'acc', ./../hw_library/pool.h:121 and 'load' operation ('i_op', ./../hw_library/pool.h:149) on array 'acc', ./../hw_library/pool.h:121.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 2, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2.1.2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2.2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+WARNING: [SCHED 204-21] Estimated clock period (12.592ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'pool_2u_64u_8u_s' consists of the following:
+	'mul' operation ('KER_size_0', ./../hw_library/pool.h:188) [194]  (12.6 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 2.414 seconds; current allocated memory: 357.142 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+WARNING: [BIND 205-102] The specified resource core for memory 'buf' will be ignored if a simpler one can be used.
+WARNING: [BIND 205-102] The specified resource core for memory 'acc' will be ignored if a simpler one can be used.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.896 seconds; current allocated memory: 358.121 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'FC_1u_1024u_64u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (12.6ns) of 'mul' operation ('KER_size_0', ./../hw_library/fully_connected.h:143) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'L1.1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'L2_L3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 7.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+WARNING: [SCHED 204-21] Estimated clock period (12.592ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'FC_1u_1024u_64u_s' consists of the following:
+	'mul' operation ('KER_size_0', ./../hw_library/fully_connected.h:143) [100]  (12.6 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.141 seconds; current allocated memory: 361.420 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.906 seconds; current allocated memory: 383.345 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'FC_1u_64u_10u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (12.6ns) of 'mul' operation ('KER_size_0', ./../hw_library/fully_connected.h:143) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'L1.1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'L2_L3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 7.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+WARNING: [SCHED 204-21] Estimated clock period (12.592ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'FC_1u_64u_10u_s' consists of the following:
+	'mul' operation ('KER_size_0', ./../hw_library/fully_connected.h:143) [68]  (12.6 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 3.126 seconds; current allocated memory: 384.990 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.085 seconds; current allocated memory: 389.554 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'AXI_DMA_MASTER' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-21] Estimated delay (12.6ns) of 'mul' operation ('KER_size_0', ./../hw_library/axi_dma_master.h:67) exceeds the target cycle time (target cycle time: 10ns, clock uncertainty: 1.25ns, effective cycle time: 8.75ns).
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+WARNING: [SCHED 204-21] Estimated clock period (12.592ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'AXI_DMA_MASTER' consists of the following:
+	'mul' operation ('KER_size_0', ./../hw_library/axi_dma_master.h:67) [26]  (12.6 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.453 seconds; current allocated memory: 389.808 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.334 seconds; current allocated memory: 390.092 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cifar_10' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.35 seconds; current allocated memory: 390.297 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 8.275 seconds; current allocated memory: 392.785 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'AXI_DMA_SLAVE' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cifar_10_mul_32s_32s_32_1_1' to 'cifar_10_mul_32s_bkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_bkb': 6 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'AXI_DMA_SLAVE'.
+INFO: [HLS 200-111]  Elapsed time: 3.359 seconds; current allocated memory: 393.980 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'SCIG' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cifar_10_mul_32s_16ns_32_1_1' to 'cifar_10_mul_32s_cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_bkb': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'SCIG'.
+INFO: [HLS 200-111]  Elapsed time: 1.229 seconds; current allocated memory: 395.357 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'SMM_1u_75u_32u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'B_COL_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_ROW_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'OFMDim_current_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'A_ROW_2' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_0' to 'SMM_1u_75u_32u_s_dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_0' to 'SMM_1u_75u_32u_s_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_1' to 'SMM_1u_75u_32u_s_fYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_1' to 'SMM_1u_75u_32u_s_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_2' to 'SMM_1u_75u_32u_s_hbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_2' to 'SMM_1u_75u_32u_s_ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_3' to 'SMM_1u_75u_32u_s_jbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_3' to 'SMM_1u_75u_32u_s_kbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_4' to 'SMM_1u_75u_32u_s_lbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_4' to 'SMM_1u_75u_32u_s_mb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_5' to 'SMM_1u_75u_32u_s_ncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_5' to 'SMM_1u_75u_32u_s_ocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_6' to 'SMM_1u_75u_32u_s_pcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_6' to 'SMM_1u_75u_32u_s_qcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_7' to 'SMM_1u_75u_32u_s_rcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_7' to 'SMM_1u_75u_32u_s_sc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_8' to 'SMM_1u_75u_32u_s_tde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_8' to 'SMM_1u_75u_32u_s_udo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_9' to 'SMM_1u_75u_32u_s_vdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_9' to 'SMM_1u_75u_32u_s_wdI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_10' to 'SMM_1u_75u_32u_s_xdS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_10' to 'SMM_1u_75u_32u_s_yd2' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_11' to 'SMM_1u_75u_32u_s_zec' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_11' to 'SMM_1u_75u_32u_s_Aem' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_12' to 'SMM_1u_75u_32u_s_Bew' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_12' to 'SMM_1u_75u_32u_s_CeG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_13' to 'SMM_1u_75u_32u_s_DeQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_13' to 'SMM_1u_75u_32u_s_Ee0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_14' to 'SMM_1u_75u_32u_s_Ffa' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_14' to 'SMM_1u_75u_32u_s_Gfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_15' to 'SMM_1u_75u_32u_s_Hfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_15' to 'SMM_1u_75u_32u_s_IfE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_16' to 'SMM_1u_75u_32u_s_JfO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_16' to 'SMM_1u_75u_32u_s_KfY' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_17' to 'SMM_1u_75u_32u_s_Lf8' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_17' to 'SMM_1u_75u_32u_s_Mgi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_18' to 'SMM_1u_75u_32u_s_Ngs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_18' to 'SMM_1u_75u_32u_s_OgC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_19' to 'SMM_1u_75u_32u_s_PgM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_19' to 'SMM_1u_75u_32u_s_QgW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_20' to 'SMM_1u_75u_32u_s_Rg6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_20' to 'SMM_1u_75u_32u_s_Shg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_21' to 'SMM_1u_75u_32u_s_Thq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_21' to 'SMM_1u_75u_32u_s_UhA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_22' to 'SMM_1u_75u_32u_s_VhK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_22' to 'SMM_1u_75u_32u_s_WhU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_23' to 'SMM_1u_75u_32u_s_Xh4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_23' to 'SMM_1u_75u_32u_s_Yie' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_A_V_2_24' to 'SMM_1u_75u_32u_s_Zio' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_75u_32u_s_B_V_2_24' to 'SMM_1u_75u_32u_s_0iy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cifar_10_urem_7ns_3ns_7_11_1' to 'cifar_10_urem_7ns1iI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cifar_10_mul_mul_16s_16s_32_1_1' to 'cifar_10_mul_mul_2iS' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cifar_10_mac_muladd_16s_16s_32s_32_1_1' to 'cifar_10_mac_mula3i2' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mac_mula3i2': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_bkb': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_mul_2iS': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_urem_7ns1iI': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'SMM_1u_75u_32u_s'.
+INFO: [HLS 200-111]  Elapsed time: 3.655 seconds; current allocated memory: 400.180 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pool_2u_32u_32u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'IFMCH_curr_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'IFMDim_curr_1' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'pool_2u_32u_32u_s_buf' to 'pool_2u_32u_32u_s4jc' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pool_2u_32u_32u_s_acc' to 'pool_2u_32u_32u_s5jm' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_bkb': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pool_2u_32u_32u_s'.
+INFO: [HLS 200-111]  Elapsed time: 9.293 seconds; current allocated memory: 402.897 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'SCIG_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cifar_10_mul_32s_14ns_32_1_1' to 'cifar_10_mul_32s_6jw' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_6jw': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_bkb': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'SCIG_2'.
+INFO: [HLS 200-111]  Elapsed time: 4.602 seconds; current allocated memory: 408.008 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'SMM_1u_800u_32u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'B_COL_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_ROW_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'OFMDim_current_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'A_ROW_1' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_0' to 'SMM_1u_800u_32u_s7jG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_0' to 'SMM_1u_800u_32u_s8jQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_1' to 'SMM_1u_800u_32u_s9j0' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_1' to 'SMM_1u_800u_32u_sbak' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_2' to 'SMM_1u_800u_32u_sbbk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_2' to 'SMM_1u_800u_32u_sbck' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_3' to 'SMM_1u_800u_32u_sbdk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_3' to 'SMM_1u_800u_32u_sbek' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_4' to 'SMM_1u_800u_32u_sbfk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_4' to 'SMM_1u_800u_32u_sbgk' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_5' to 'SMM_1u_800u_32u_sbhl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_5' to 'SMM_1u_800u_32u_sbil' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_6' to 'SMM_1u_800u_32u_sbjl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_6' to 'SMM_1u_800u_32u_sbkl' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_7' to 'SMM_1u_800u_32u_sbll' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_7' to 'SMM_1u_800u_32u_sbml' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_8' to 'SMM_1u_800u_32u_sbnm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_8' to 'SMM_1u_800u_32u_sbom' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_9' to 'SMM_1u_800u_32u_sbpm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_9' to 'SMM_1u_800u_32u_sbqm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_10' to 'SMM_1u_800u_32u_sbrm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_10' to 'SMM_1u_800u_32u_sbsm' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_11' to 'SMM_1u_800u_32u_sbtn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_11' to 'SMM_1u_800u_32u_sbun' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_12' to 'SMM_1u_800u_32u_sbvn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_12' to 'SMM_1u_800u_32u_sbwn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_13' to 'SMM_1u_800u_32u_sbxn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_13' to 'SMM_1u_800u_32u_sbyn' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_14' to 'SMM_1u_800u_32u_sbzo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_14' to 'SMM_1u_800u_32u_sbAo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_15' to 'SMM_1u_800u_32u_sbBo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_15' to 'SMM_1u_800u_32u_sbCo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_16' to 'SMM_1u_800u_32u_sbDo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_16' to 'SMM_1u_800u_32u_sbEo' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_17' to 'SMM_1u_800u_32u_sbFp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_17' to 'SMM_1u_800u_32u_sbGp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_18' to 'SMM_1u_800u_32u_sbHp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_18' to 'SMM_1u_800u_32u_sbIp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_19' to 'SMM_1u_800u_32u_sbJp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_19' to 'SMM_1u_800u_32u_sbKp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_20' to 'SMM_1u_800u_32u_sbLp' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_20' to 'SMM_1u_800u_32u_sbMq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_21' to 'SMM_1u_800u_32u_sbNq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_21' to 'SMM_1u_800u_32u_sbOq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_22' to 'SMM_1u_800u_32u_sbPq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_22' to 'SMM_1u_800u_32u_sbQq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_23' to 'SMM_1u_800u_32u_sbRq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_23' to 'SMM_1u_800u_32u_sbSr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_A_V_3_24' to 'SMM_1u_800u_32u_sbTr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_32u_s_B_V_3_24' to 'SMM_1u_800u_32u_sbUr' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mac_mula3i2': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_bkb': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_mul_2iS': 9 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'SMM_1u_800u_32u_s'.
+INFO: [HLS 200-111]  Elapsed time: 9.968 seconds; current allocated memory: 412.680 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pool_2u_32u_16u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'IFMCH_curr_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'IFMDim_curr_2' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'pool_2u_32u_16u_s_buf' to 'pool_2u_32u_16u_sbVr' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pool_2u_32u_16u_s_acc' to 'pool_2u_32u_16u_sbWr' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_bkb': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pool_2u_32u_16u_s'.
+INFO: [HLS 200-111]  Elapsed time: 9.33 seconds; current allocated memory: 414.994 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'SCIG_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cifar_10_mul_32s_12ns_32_1_1' to 'cifar_10_mul_32s_bXr' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_bXr': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_bkb': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'SCIG_1'.
+INFO: [HLS 200-111]  Elapsed time: 3.629 seconds; current allocated memory: 420.081 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'SMM_1u_800u_64u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'B_COL' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_ROW' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'OFMDim_current' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'A_ROW' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_0' to 'SMM_1u_800u_64u_sbYs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_0' to 'SMM_1u_800u_64u_sbZs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_1' to 'SMM_1u_800u_64u_sb0s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_1' to 'SMM_1u_800u_64u_sb1s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_2' to 'SMM_1u_800u_64u_sb2s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_2' to 'SMM_1u_800u_64u_sb3s' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_3' to 'SMM_1u_800u_64u_sb4t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_3' to 'SMM_1u_800u_64u_sb5t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_4' to 'SMM_1u_800u_64u_sb6t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_4' to 'SMM_1u_800u_64u_sb7t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_5' to 'SMM_1u_800u_64u_sb8t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_5' to 'SMM_1u_800u_64u_sb9t' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_6' to 'SMM_1u_800u_64u_scau' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_6' to 'SMM_1u_800u_64u_scbu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_7' to 'SMM_1u_800u_64u_sccu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_7' to 'SMM_1u_800u_64u_scdu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_8' to 'SMM_1u_800u_64u_sceu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_8' to 'SMM_1u_800u_64u_scfu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_9' to 'SMM_1u_800u_64u_scgu' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_9' to 'SMM_1u_800u_64u_schv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_10' to 'SMM_1u_800u_64u_sciv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_10' to 'SMM_1u_800u_64u_scjv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_11' to 'SMM_1u_800u_64u_sckv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_11' to 'SMM_1u_800u_64u_sclv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_12' to 'SMM_1u_800u_64u_scmv' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_12' to 'SMM_1u_800u_64u_scnw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_13' to 'SMM_1u_800u_64u_scow' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_13' to 'SMM_1u_800u_64u_scpw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_14' to 'SMM_1u_800u_64u_scqw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_14' to 'SMM_1u_800u_64u_scrw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_15' to 'SMM_1u_800u_64u_scsw' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_15' to 'SMM_1u_800u_64u_sctx' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_16' to 'SMM_1u_800u_64u_scux' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_16' to 'SMM_1u_800u_64u_scvx' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_17' to 'SMM_1u_800u_64u_scwx' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_17' to 'SMM_1u_800u_64u_scxx' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_18' to 'SMM_1u_800u_64u_scyx' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_18' to 'SMM_1u_800u_64u_sczy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_19' to 'SMM_1u_800u_64u_scAy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_19' to 'SMM_1u_800u_64u_scBy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_20' to 'SMM_1u_800u_64u_scCy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_20' to 'SMM_1u_800u_64u_scDy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_21' to 'SMM_1u_800u_64u_scEy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_21' to 'SMM_1u_800u_64u_scFz' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_22' to 'SMM_1u_800u_64u_scGz' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_22' to 'SMM_1u_800u_64u_scHz' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_23' to 'SMM_1u_800u_64u_scIz' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_23' to 'SMM_1u_800u_64u_scJz' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_A_V_4_24' to 'SMM_1u_800u_64u_scKz' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'SMM_1u_800u_64u_s_B_V_4_24' to 'SMM_1u_800u_64u_scLz' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mac_mula3i2': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_bkb': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_mul_2iS': 9 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'SMM_1u_800u_64u_s'.
+INFO: [HLS 200-111]  Elapsed time: 9.497 seconds; current allocated memory: 424.772 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pool_2u_64u_8u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'IFMCH_curr' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'IFMDim_curr' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'pool_2u_64u_8u_s_buf' to 'pool_2u_64u_8u_s_cMA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'pool_2u_64u_8u_s_acc' to 'pool_2u_64u_8u_s_cNA' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_bkb': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pool_2u_64u_8u_s'.
+INFO: [HLS 200-111]  Elapsed time: 9.519 seconds; current allocated memory: 427.483 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'FC_1u_1024u_64u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'B_COL_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_ROW_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'OFMDim_current_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'A_ROW_4' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_0' to 'FC_1u_1024u_64u_scOA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_0' to 'FC_1u_1024u_64u_scPA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_1123' to 'FC_1u_1024u_64u_scQA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_1127' to 'FC_1u_1024u_64u_scRA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_2124' to 'FC_1u_1024u_64u_scSB' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_2128' to 'FC_1u_1024u_64u_scTB' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_3125' to 'FC_1u_1024u_64u_scUB' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_3129' to 'FC_1u_1024u_64u_scVB' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_4126' to 'FC_1u_1024u_64u_scWB' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_4130' to 'FC_1u_1024u_64u_scXB' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_5' to 'FC_1u_1024u_64u_scYC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_5' to 'FC_1u_1024u_64u_scZC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_6' to 'FC_1u_1024u_64u_sc0C' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_6' to 'FC_1u_1024u_64u_sc1C' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_7' to 'FC_1u_1024u_64u_sc2C' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_7' to 'FC_1u_1024u_64u_sc3C' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_8' to 'FC_1u_1024u_64u_sc4D' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_8' to 'FC_1u_1024u_64u_sc5D' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_9' to 'FC_1u_1024u_64u_sc6D' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_9' to 'FC_1u_1024u_64u_sc7D' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_10' to 'FC_1u_1024u_64u_sc8D' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_10' to 'FC_1u_1024u_64u_sc9D' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_11' to 'FC_1u_1024u_64u_sdaE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_11' to 'FC_1u_1024u_64u_sdbE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_12' to 'FC_1u_1024u_64u_sdcE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_12' to 'FC_1u_1024u_64u_sddE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_13' to 'FC_1u_1024u_64u_sdeE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_13' to 'FC_1u_1024u_64u_sdfE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_14' to 'FC_1u_1024u_64u_sdgE' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_14' to 'FC_1u_1024u_64u_sdhF' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_15' to 'FC_1u_1024u_64u_sdiF' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_15' to 'FC_1u_1024u_64u_sdjF' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_16' to 'FC_1u_1024u_64u_sdkF' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_16' to 'FC_1u_1024u_64u_sdlF' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_17' to 'FC_1u_1024u_64u_sdmF' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_17' to 'FC_1u_1024u_64u_sdnG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_18' to 'FC_1u_1024u_64u_sdoG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_18' to 'FC_1u_1024u_64u_sdpG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_19' to 'FC_1u_1024u_64u_sdqG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_19' to 'FC_1u_1024u_64u_sdrG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_20' to 'FC_1u_1024u_64u_sdsG' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_20' to 'FC_1u_1024u_64u_sdtH' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_21' to 'FC_1u_1024u_64u_sduH' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_21' to 'FC_1u_1024u_64u_sdvH' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_22' to 'FC_1u_1024u_64u_sdwH' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_22' to 'FC_1u_1024u_64u_sdxH' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_23' to 'FC_1u_1024u_64u_sdyH' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_23' to 'FC_1u_1024u_64u_sdzI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_24' to 'FC_1u_1024u_64u_sdAI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_24' to 'FC_1u_1024u_64u_sdBI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_25' to 'FC_1u_1024u_64u_sdCI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_25' to 'FC_1u_1024u_64u_sdDI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_26' to 'FC_1u_1024u_64u_sdEI' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_26' to 'FC_1u_1024u_64u_sdFJ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_27' to 'FC_1u_1024u_64u_sdGJ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_27' to 'FC_1u_1024u_64u_sdHJ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_28' to 'FC_1u_1024u_64u_sdIJ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_28' to 'FC_1u_1024u_64u_sdJJ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_29' to 'FC_1u_1024u_64u_sdKJ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_29' to 'FC_1u_1024u_64u_sdLJ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_30' to 'FC_1u_1024u_64u_sdMK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_30' to 'FC_1u_1024u_64u_sdNK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_A_V_31' to 'FC_1u_1024u_64u_sdOK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_1024u_64u_s_B_V_31' to 'FC_1u_1024u_64u_sdPK' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mac_mula3i2': 16 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_bkb': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_mul_2iS': 16 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'FC_1u_1024u_64u_s'.
+INFO: [HLS 200-111]  Elapsed time: 5.781 seconds; current allocated memory: 433.028 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'FC_1u_64u_10u_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'B_COL_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'B_ROW_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'OFMDim_current_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'A_ROW_3' is power-on initialization.
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_0' to 'FC_1u_64u_10u_s_AdQK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_0' to 'FC_1u_64u_10u_s_BdRK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_1' to 'FC_1u_64u_10u_s_AdSL' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_1' to 'FC_1u_64u_10u_s_BdTL' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_2' to 'FC_1u_64u_10u_s_AdUL' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_2' to 'FC_1u_64u_10u_s_BdVL' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_3' to 'FC_1u_64u_10u_s_AdWL' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_3' to 'FC_1u_64u_10u_s_BdXL' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_4' to 'FC_1u_64u_10u_s_AdYM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_4' to 'FC_1u_64u_10u_s_BdZM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_5' to 'FC_1u_64u_10u_s_Ad0M' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_5' to 'FC_1u_64u_10u_s_Bd1M' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_6' to 'FC_1u_64u_10u_s_Ad2M' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_6' to 'FC_1u_64u_10u_s_Bd3M' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_7' to 'FC_1u_64u_10u_s_Ad4N' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_7' to 'FC_1u_64u_10u_s_Bd5N' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_8' to 'FC_1u_64u_10u_s_Ad6N' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_8' to 'FC_1u_64u_10u_s_Bd7N' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_9' to 'FC_1u_64u_10u_s_Ad8N' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_9' to 'FC_1u_64u_10u_s_Bd9N' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_10' to 'FC_1u_64u_10u_s_AeaO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_10' to 'FC_1u_64u_10u_s_BebO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_11' to 'FC_1u_64u_10u_s_AecO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_11' to 'FC_1u_64u_10u_s_BedO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_12' to 'FC_1u_64u_10u_s_AeeO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_12' to 'FC_1u_64u_10u_s_BefO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_13' to 'FC_1u_64u_10u_s_AegO' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_13' to 'FC_1u_64u_10u_s_BehP' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_14' to 'FC_1u_64u_10u_s_AeiP' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_14' to 'FC_1u_64u_10u_s_BejP' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_A_V_1_15' to 'FC_1u_64u_10u_s_AekP' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'FC_1u_64u_10u_s_B_V_1_15' to 'FC_1u_64u_10u_s_BelP' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mac_mula3i2': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_bkb': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_mul_2iS': 8 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'FC_1u_64u_10u_s'.
+INFO: [HLS 200-111]  Elapsed time: 12.27 seconds; current allocated memory: 437.203 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'AXI_DMA_MASTER' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'cifar_10_mul_32s_bkb': 6 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'AXI_DMA_MASTER'.
+INFO: [HLS 200-111]  Elapsed time: 6.706 seconds; current allocated memory: 438.477 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cifar_10' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'cifar_10/in_stream_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'cifar_10/in_stream_V_last' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'cifar_10/out_stream_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'cifar_10/out_stream_V_last' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'cifar_10' to 'ap_ctrl_none'.
+INFO: [SYN 201-210] Renamed object name 'start_for_SMM_1u_75u_32u_U0' to 'start_for_SMM_1u_emP' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_pool_2u_32u_32u_U0' to 'start_for_pool_2uenQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_SMM_1u_800u_32u_U0' to 'start_for_SMM_1u_eoQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_pool_2u_32u_16u_U0' to 'start_for_pool_2uepQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_SMM_1u_800u_64u_U0' to 'start_for_SMM_1u_eqQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_pool_2u_64u_8u_U0' to 'start_for_pool_2uerQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_FC_1u_1024u_64u_U0' to 'start_for_FC_1u_1esQ' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_FC_1u_64u_10u_U0' to 'start_for_FC_1u_6etR' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'start_for_AXI_DMA_MASTER_U0' to 'start_for_AXI_DMAeuR' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cifar_10'.
+INFO: [HLS 200-111]  Elapsed time: 1.505 seconds; current allocated memory: 439.733 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'cifar_10_mul_32s_bkb_Mul_LUT_0'
+INFO: [RTMG 210-282] Generating pipelined core: 'cifar_10_mul_32s_cud_Mul_LUT_1'
+INFO: [RTMG 210-278] Implementing memory 'SCIG_inputBuf_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'SCIG_inElem_V_ram (RAM_S2P_LUTRAM)' using distributed RAMs.
+INFO: [RTMG 210-282] Generating pipelined core: 'cifar_10_urem_7ns1iI_div'
+INFO: [RTMG 210-278] Implementing memory 'SMM_1u_75u_32u_s_dEe_ram (RAM_S2P_LUTRAM)' using distributed RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'SMM_1u_75u_32u_s_eOg_ram (RAM_S2P_BRAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'pool_2u_32u_32u_s4jc_ram (RAM_2P_LUTRAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'pool_2u_32u_32u_s5jm_ram (RAM_2P_LUTRAM)' using distributed RAMs.
+INFO: [RTMG 210-282] Generating pipelined core: 'cifar_10_mul_32s_6jw_Mul_LUT_2'
+INFO: [RTMG 210-278] Implementing memory 'SCIG_2_inputBuf_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'SMM_1u_800u_32u_s7jG_ram (RAM_S2P_LUTRAM)' using distributed RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'SMM_1u_800u_32u_s8jQ_ram (RAM_S2P_BRAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'pool_2u_32u_16u_sbVr_ram (RAM_2P_LUTRAM)' using distributed RAMs.
+INFO: [RTMG 210-282] Generating pipelined core: 'cifar_10_mul_32s_bXr_Mul_LUT_3'
+INFO: [RTMG 210-278] Implementing memory 'SMM_1u_800u_64u_sbZs_ram (RAM_S2P_BRAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'pool_2u_64u_8u_s_cNA_ram (RAM_2P_LUTRAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'FC_1u_64u_10u_s_AdQK_ram (RAM_S2P_LUTRAM)' using distributed RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'FC_1u_64u_10u_s_BdRK_ram (RAM_S2P_BRAM)' using block RAMs with power-on initialization.
+INFO: [RTMG 210-285] Implementing FIFO 'connect_0_V_V_U(fifo_w32_d50_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'connect_1_V_V_U(fifo_w32_d50_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'connect_2_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'connect_3_V_V_U(fifo_w32_d50_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'connect_4_V_V_U(fifo_w32_d50_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'connect_5_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'connect_6_V_V_U(fifo_w32_d50_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'connect_7_V_V_U(fifo_w32_d50_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'connect_8_V_V_U(fifo_w32_d2_A)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'connect_9_V_V_U(fifo_w32_d50_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'connect_10_V_V_U(fifo_w32_d50_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'connect_11_V_V_U(fifo_w32_d50_A)' using Block RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_SCIG_U0_U(start_for_SCIG_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_SMM_1u_emP_U(start_for_SMM_1u_emP)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_pool_2uenQ_U(start_for_pool_2uenQ)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_SCIG_2_U0_U(start_for_SCIG_2_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_SMM_1u_eoQ_U(start_for_SMM_1u_eoQ)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_pool_2uepQ_U(start_for_pool_2uepQ)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_SCIG_1_U0_U(start_for_SCIG_1_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_SMM_1u_eqQ_U(start_for_SMM_1u_eqQ)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_pool_2uerQ_U(start_for_pool_2uerQ)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_FC_1u_1esQ_U(start_for_FC_1u_1esQ)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_FC_1u_6etR_U(start_for_FC_1u_6etR)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_AXI_DMAeuR_U(start_for_AXI_DMAeuR)' using Shift Registers.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:02:02 ; elapsed = 00:03:51 . Memory (MB): peak = 615.828 ; gain = 531.309
+INFO: [SYSC 207-301] Generating SystemC RTL for cifar_10.
+INFO: [VHDL 208-304] Generating VHDL RTL for cifar_10.
+INFO: [VLOG 209-307] Generating Verilog RTL for cifar_10.
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programs/Xilinx/Vivado/2018.3/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 28 15:00:55 2020...
+[2Kvivado_hls> [12C^C

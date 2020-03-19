@@ -1,10 +1,8 @@
 from distutils.core import setup, Extension
 import numpy
-from Cython.Distutils import build_ext
+from Cython.Build import cythonize
 
+ext = [Extension("im2col_lasagne_cython",sources=["im2col_lasagne_cython.pyx"],include_dirs=[numpy.get_include()]),Extension("acc8_func",sources = ["acc8.c","acc8_func.pyx"]) ]
 setup(
-    cmdclass={'build_ext': build_ext},
-    ext_modules=[Extension("im2col_lasagne_cython",
-                 sources=["_im2col_lasagne_cython.pyx"],
-                 include_dirs=[numpy.get_include()])],
+    ext_modules=cythonize(ext)
 )
